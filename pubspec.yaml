@@ -39,6 +39,8 @@ dependencies:
   persistent_bottom_nav_bar: ^6.1.1
   video_player: ^2.9.3
   image_picker: ^1.0.4
+  shared_preferences: ^2.2.3
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:

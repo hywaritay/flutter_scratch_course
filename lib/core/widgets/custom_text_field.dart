@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -44,25 +43,30 @@ class CustomTextField extends StatelessWidget {
             validator: validator,
             style: TextStyle(
               fontSize: scaledFont(15),
-              color: AppColors.secondary,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             decoration: InputDecoration(
               isDense: true,
-              contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 16,
+                horizontal: 14,
+              ),
               labelText: label,
               labelStyle: TextStyle(
                 fontSize: scaledFont(15),
-                color: AppColors.hint,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
-              prefixIcon: Icon(icon, color: AppColors.primary, size: scaledFont(22)),
+              prefixIcon: Icon(
+                icon,
+                color: Theme.of(context).colorScheme.primary,
+                size: scaledFont(22),
+              ),
               // Password eye icon
               suffixIcon: isPassword
                   ? IconButton(
                       icon: Icon(
-                        obscureText
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: AppColors.hint,
+                        obscureText ? Icons.visibility : Icons.visibility_off,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                         size: scaledFont(21),
                       ),
                       onPressed: onToggleVisibility,
@@ -71,16 +75,41 @@ class CustomTextField extends StatelessWidget {
                   : null,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.primary, width: 1),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                  width: 1,
+                ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.primary, width: 1),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                  width: 1,
+                ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.secondary, width: 2),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.primary,
+                  width: 2,
+                ),
               ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.error,
+                  width: 1,
+                ),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.error,
+                  width: 2,
+                ),
+              ),
+              filled: true,
+              fillColor: Theme.of(context).colorScheme.surface,
               errorMaxLines: 2, // Avoid overflow with error messages
             ),
           ),

@@ -6,6 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/pie_chart_widget.dart';
 import 'market_screen.dart';
 import 'prediction_screen.dart';
+import 'settings_screen.dart';
 import 'video_tutorial_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -324,14 +325,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget _buildSettingsScreen() {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Settings"),
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
-      ),
-      body: const Center(child: Text("Settings Screen")),
-    );
+    return const SettingsScreen();
   }
 
   Widget _buildVideoTutorialScreen() {
